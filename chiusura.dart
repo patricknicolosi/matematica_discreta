@@ -15,8 +15,10 @@ void main() {
       chiusura.add(unione(famiglia[i], famiglia[j]));
     }
   }
-  
+
   //La chiusura è per definizione la più piccola famiglia quindi ripulisco la mia chiusura togliendone i duplicati
+  eliminaDuplicati(chiusura);
+
   print(chiusura);
 }
 
@@ -27,7 +29,7 @@ List<int> unione(List<int> a, List<int> b) {
   return c.toSet().toList();
 }
 
-void eliminaDuplicati(List<int> array) {
+void eliminaDuplicati(List<List<int>> array) {
   for (int i = 0; i < array.length; i++) {
     for (int j = i + 1; j < array.length; j++) {
       if (array[i].toString() == array[j].toString()) {
