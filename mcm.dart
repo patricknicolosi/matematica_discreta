@@ -12,7 +12,6 @@ void main() {
   }
   
   print(chiusura.toSet().toList());
-
 }
 
 int mcm(int a, int b) => (a * b) ~/ mcd(a, b);
