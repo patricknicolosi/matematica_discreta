@@ -1,3 +1,4 @@
+//Chiusura di un insieme rispetto operazione di mcm
 void main() {
   List<int> insieme = [1, 2, 3, 6];
   List<int> chiusura = [];
