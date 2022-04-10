@@ -1,8 +1,6 @@
-//Implementazione ricorsiva e iterativa dell'algoritmo di Euclide per il calcolo del massimo comun divisore
 int mcdR(int a, int b) {
   if (b == 0) return a;
-  int r = a % b;
-  return mcdR(b, r);
+  return mcdR(b, a % b);
 }
 
 int mcdI(int a, int b) {
