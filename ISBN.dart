@@ -1,7 +1,7 @@
 //Verifica ISBN10 e ISBN13 valido
 
 void main() {
-  ISBN isbn = ISBN('2468864222');
+  ISBN isbn = ISBN('2468864211129');
   print(isbn.controlla());
 }
 
@@ -16,7 +16,7 @@ class ISBN {
     } else if (codice.length == 13) {
       return _controllaISBN13();
     } else {
-      print('formato ISBN non supportato');
+      return 'formato ISBN non supportato';
     }
   }
 
@@ -33,15 +33,14 @@ class ISBN {
 
   bool _controllaISBN13() {
     int sum = 0;
-    for (int i = 0; i < 10; i++) {
-      if (i % 2 != 0) {
+    for (int i = 0; i < 13; i++) {
+      if (i % 2 == 0) {
         sum += int.parse(codice[i]);
       } else {
         sum += (3 * int.parse(codice[i]));
       }
     }
-    print(sum);
-    if (sum == 99) {
+    if (sum == 100) {
       return true;
     }
     return false;
