@@ -34,7 +34,11 @@ class ISBN {
   bool _controllaISBN13() {
     int sum = 0;
     for (int i = 0; i < 10; i++) {
-      sum += int.parse(codice[i]);
+      if (i % 2 != 0) {
+        sum += int.parse(codice[i]);
+      } else {
+        sum += (3 * int.parse(codice[i]));
+      }
     }
     print(sum);
     if (sum == 99) {
